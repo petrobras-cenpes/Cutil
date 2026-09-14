@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cutil</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="manifest" href="./manifest.json" />
+<meta name="theme-color" content="#0b1220" />
+<link rel="icon" href="./icon-512.png" />
+<link rel="apple-touch-icon" href="./icon-512.png" />
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="title">Cutil</div>
+    <div class="subtitle">Buscar por Painel, Disjuntor, Equipamentos…</div>
+  </div>
+
+  <div class="searchbar">
+    <input id="q" type="search" placeholder="Ex.: PN-025101-02 ou M-B-0251-01A" autocomplete="on" />
+    <button id="clear" type="button">Limpar</button>
+  </div>
+
+  <div class="filters">
+    <select id="f_painel">
+      <option value="">Painel (todos)</option>
+    </select>
+    <select id="f_area">
+      <option value="">Área (todas)</option>
+    </select>
+    <select id="f_funcao">
+      <option value="">Função (todas)</option>
+    </select>
+    <select id="f_tensao">
+      <option value="">Tensão (todas)</option>
+    </select>
+    <select id="f_grau">
+      <option value="">Grau (todos)</option>
+    </select>
+  </div>
+
+  <div class="meta">
+    <span id="count">0 resultados</span>
+  </div>
+</header>
+
+<main id="list" class="list"></main>
+
+<dialog id="dlg" class="dlg">
+  <div class="dlg_head">
+    <div>
+      <div id="dlg_title" class="dlg_title"></div>
+      <div id="dlg_sub" class="dlg_sub"></div>
+    </div>
+    <button id="dlg_close" class="iconbtn" type="button">Fechar</button>
+  </div>
+  <div id="dlg_body" class="dlg_body"></div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
