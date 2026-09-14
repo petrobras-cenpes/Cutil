@@ -1,0 +1,184 @@
+:root{
+  --bg:#0b1220;
+  --card:#121b2e;
+  --muted:#9fb0d0;
+  --text:#e9eefc;
+  --accent:#5eead4;
+  --line: rgba(255,255,255,.08);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 700px at 20% -10%, rgba(94,234,212,.18), transparent 60%),
+              radial-gradient(1000px 600px at 90% 0%, rgba(59,130,246,.18), transparent 55%),
+              var(--bg);
+  color:var(--text);
+}
+
+.top{
+  position:sticky; top:0; z-index:10;
+  padding:16px 14px 10px;
+  backdrop-filter: blur(10px);
+  background: rgba(11,18,32,.78);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand .title{font-size:18px; font-weight:700}
+.brand .subtitle{font-size:12px; color:var(--muted); margin-top:4px}
+
+.searchbar{
+  display:flex; gap:10px;
+  margin-top:12px;
+}
+.searchbar input{
+  flex:1;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  color:var(--text);
+  outline:none;
+}
+.searchbar button{
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  color:var(--text);
+}
+
+.filters{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:10px;
+  margin-top:10px;
+}
+.filters select{
+  padding:10px 10px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  outline:none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Opções do dropdown (nem todos os browsers respeitam 100%, mas ajuda muito) */
+.filters select option{
+  background: #0f172a; /* fundo escuro */
+  color: #e9eefc; /* texto claro */
+}
+
+/* Estado hover/selecionado (pode ser ignorado por alguns browsers) */
+.filters select option:checked,
+.filters select option:hover{
+  background: #1f2a44;
+  color: #e9eefc;
+}
+
+/* Placeholder do input de busca mais legível */
+.searchbar input::placeholder{
+  color: rgba(233,238,252,.65);
+}
+
+.meta{margin-top:10px; color:var(--muted); font-size:12px}
+
+.list{
+  padding:12px 10px 24px;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:10px;
+}
+
+.card{
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border-radius:16px;
+  padding:12px 12px;
+}
+.card_top{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+}
+.badge{
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:999px;
+  border:1px solid rgba(94,234,212,.35);
+  color: var(--accent);
+}
+
+/* Título principal do card — sempre os dados de "Alimenta", em destaque */
+.k1{
+  font-size:16px;
+  font-weight:800;
+  color: var(--accent);
+}
+
+/* Linha secundária: indica em qual campo a busca encontrou correspondência */
+.k1_match{
+  font-size:11px;
+  color: var(--muted);
+  margin-top:2px;
+}
+
+.k2{font-size:12px; color: var(--muted); margin-top:2px}
+.row{
+  display:flex; flex-wrap:wrap; gap:8px;
+  margin-top:10px;
+  color: var(--muted);
+  font-size:12px;
+}
+.pill{
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  border-radius:999px;
+  padding:5px 8px;
+}
+.btn{
+  margin-top:10px;
+  width:100%;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+
+.dlg{
+  width:min(720px, 92vw);
+  border:none;
+  border-radius:16px;
+  padding:0;
+  background: var(--card);
+  color: var(--text);
+}
+.dlg::backdrop{background: rgba(0,0,0,.6)}
+.dlg_head{
+  display:flex; align-items:flex-start; justify-content:space-between;
+  gap:10px;
+  padding:14px 14px 10px;
+  border-bottom:1px solid var(--line);
+}
+.dlg_title{font-size:16px; font-weight:800}
+.dlg_sub{font-size:12px; color:var(--muted); margin-top:4px}
+.dlg_body{padding:12px 14px 16px}
+.iconbtn{
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+}
+.kv{
+  display:grid;
+  grid-template-columns: 140px 1fr;
+  gap:10px;
+  padding:10px 0;
+  border-bottom:1px dashed rgba(255,255,255,.10);
+  font-size:13px;
+}
+.kv .k{color:var(--muted)}
+.kv .v{color:var(--text); word-break:break-word}
